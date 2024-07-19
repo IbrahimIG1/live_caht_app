@@ -36,7 +36,7 @@ class FirebaseService {
       final creatUser = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       final UserModel user =
-          UserModel(name: name, userName: userName, password: password);
+          UserModel(name: name, userName: userName, password: password,email: email);
       // check the user data not null
       if (creatUser.user != null) {
         final docRef = _stor.collection('users').doc(creatUser.user!.uid);
