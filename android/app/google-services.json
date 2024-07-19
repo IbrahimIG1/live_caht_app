@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "558004547099",
+    "project_id": "live-chat-room-9f38e",
+    "storage_bucket": "live-chat-room-9f38e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558004547099:android:ad60a11ea427446d5052be",
+        "android_client_info": {
+          "package_name": "com.example.voice_chat_room"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqpovyEbURekkNA1c5bA2WeeYtNQyTqvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
