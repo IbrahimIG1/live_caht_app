@@ -19,10 +19,10 @@ class _UserCardState extends State<UserCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 12.0),
+      padding: EdgeInsets.only(bottom: 12.0.h),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 90.h,
+        height: 100.h,
         padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 15.w),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -48,7 +48,7 @@ class _UserCardState extends State<UserCard> {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 18.sp,
+                fontSize: 18,
               ),
             ),
             const Spacer(),

@@ -4,18 +4,21 @@ import 'package:voice_chat_room/models/user_model.dart';
 import 'package:voice_chat_room/services/firebase/firebaseservice.dart';
 import 'package:voice_chat_room/shared/user_card.dart';
 
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(FirebaseService.currentUser.userName),
+      ),
+      drawer: Drawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-           
             Center(
+              // stream to get any user login new
               child: StreamBuilder<QuerySnapshot>(
                 stream: FirebaseService.buildViews,
                 builder: (context, snapshot) {

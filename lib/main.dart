@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:voice_chat_room/screens/login_screen/login.dart';
 import 'package:voice_chat_room/services/firebase/firebaseservice.dart';
+import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 
+final navigatorKey = GlobalKey();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FirebaseService.setupFirebase();
