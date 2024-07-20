@@ -25,10 +25,10 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
         child: isLoading
-            ? Center(child: CircularProgressIndicator())
+            ? const Center(child: CircularProgressIndicator())
             : Center(
                 child: SingleChildScrollView(
-                  padding: EdgeInsets.all(0),
+                  padding: const EdgeInsets.all(0),
                   child: Padding(
                       padding: EdgeInsets.symmetric(
                           vertical: 15.h, horizontal: 15.w),
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               AppTextFormFeild(
                                   hintText: 'email',
                                   controller: email,
-                                  suffixIcon: Icon(Icons.email),
+                                  suffixIcon: const Icon(Icons.email),
                                   labelText: "Email"),
                               SizedBox(
                                 height: 20.h,
@@ -70,8 +70,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                       });
                                     },
                                     child: isPasword
-                                        ? Icon(Icons.visibility_off)
-                                        : Icon(Icons.visibility_outlined),
+                                        ? const Icon(Icons.visibility_off)
+                                        : const Icon(Icons.visibility_outlined),
                                   ),
                                   labelText: "Password"),
                               SizedBox(
@@ -82,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => SignUpScreen()),
+                                        builder: (context) => const SignUpScreen()),
                                   );
                                 },
                                 child: const Text(
@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => HomeScreen()),
+                                          builder: (context) => const HomeScreen()),
                                     );
                                   } else {
                                     const SnackBar(

@@ -26,7 +26,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
-            padding: EdgeInsets.all(0),
+            padding: const EdgeInsets.all(0),
             child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 15.w),
                 child: Form(
@@ -49,7 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         AppTextFormFeild(
                             hintText: 'name',
                             controller: name,
-                            suffixIcon: Icon(Icons.person),
+                            suffixIcon: const Icon(Icons.person),
                             labelText: "name"),
                         SizedBox(
                           height: 20.h,
@@ -58,7 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         AppTextFormFeild(
                             hintText: 'user name',
                             controller: userName,
-                            suffixIcon: Icon(Icons.person),
+                            suffixIcon: const Icon(Icons.person),
                             labelText: "user name"),
                         SizedBox(
                           height: 20.h,
@@ -68,7 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         AppTextFormFeild(
                             hintText: 'email',
                             controller: email,
-                            suffixIcon: Icon(Icons.email),
+                            suffixIcon: const Icon(Icons.email),
                             labelText: "Email"),
                         SizedBox(
                           height: 20.h,
@@ -88,7 +88,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginScreen()),
+                                  builder: (context) => const LoginScreen()),
                             );
                           },
                           child: const Text(
@@ -115,7 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HomeScreen()),
+                                    builder: (context) => const HomeScreen()),
                               );
                             } else {
                               if (mounted) {

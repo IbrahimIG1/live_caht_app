@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(FirebaseService.currentUser.userName),
       ),
-      drawer: Drawer(),
+      drawer: const Drawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [

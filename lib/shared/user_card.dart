@@ -45,7 +45,7 @@ class _UserCardState extends State<UserCard> {
             Text(
               widget.userModel.name,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
