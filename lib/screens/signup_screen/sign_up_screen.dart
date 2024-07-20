@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:voice_chat_room/screens/home_screen/home_screen.dart';
 import 'package:voice_chat_room/screens/login_screen/login.dart';
-import 'package:voice_chat_room/screens/login_screen/widgets/text_form_feild.dart';
+import 'package:voice_chat_room/shared/widgets/text_form_feild.dart';
 import 'package:voice_chat_room/services/firebase/firebaseservice.dart';
 
 class SignUpScreen extends StatefulWidget {

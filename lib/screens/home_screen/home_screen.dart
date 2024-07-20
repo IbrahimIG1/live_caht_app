@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:voice_chat_room/models/user_model.dart';
 import 'package:voice_chat_room/services/firebase/firebaseservice.dart';
-import 'package:voice_chat_room/shared/user_card.dart';
+import 'package:voice_chat_room/shared/widgets/user_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:voice_chat_room/screens/home_screen/home_screen.dart';
 import 'package:voice_chat_room/screens/login_screen/login.dart';
 
 class PermissionHandlerWidget extends StatefulWidget {
