@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:voice_chat_room/Routes/app_router.dart';
 import 'package:voice_chat_room/screens/home_screen/home_screen.dart';
-import 'package:voice_chat_room/screens/login_screen/widgets/text_form_feild.dart';
-import 'package:voice_chat_room/services/firebaseservice.dart';
+import 'package:voice_chat_room/screens/login_screen/login.dart';
+import 'package:voice_chat_room/shared/widgets/text_form_feild.dart';
+import 'package:voice_chat_room/services/firebase/firebaseservice.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -26,7 +26,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
-            padding: EdgeInsets.all(0),
+            padding: const EdgeInsets.all(0),
             child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 15.w),
                 child: Form(
@@ -49,7 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         AppTextFormFeild(
                             hintText: 'name',
                             controller: name,
-                            suffixIcon: Icon(Icons.person),
+                            suffixIcon: const Icon(Icons.person),
                             labelText: "name"),
                         SizedBox(
                           height: 20.h,
@@ -58,7 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         AppTextFormFeild(
                             hintText: 'user name',
                             controller: userName,
-                            suffixIcon: Icon(Icons.person),
+                            suffixIcon: const Icon(Icons.person),
                             labelText: "user name"),
                         SizedBox(
                           height: 20.h,
@@ -68,7 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         AppTextFormFeild(
                             hintText: 'email',
                             controller: email,
-                            suffixIcon: Icon(Icons.email),
+                            suffixIcon: const Icon(Icons.email),
                             labelText: "Email"),
                         SizedBox(
                           height: 20.h,
@@ -85,8 +85,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                         TextButton(
                           onPressed: () {
-                            Navigator.of(context)
-                                .pushReplacementNamed(Routes.loginScreen);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginScreen()),
+                            );
                           },
                           child: const Text(
                             "have an account?",
@@ -112,7 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HomeScreen()),
+                                    builder: (context) => const HomeScreen()),
                               );
                             } else {
                               if (mounted) {

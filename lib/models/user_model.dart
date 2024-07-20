@@ -1,4 +1,3 @@
-import 'package:voice_chat_room/screens/login_screen/login.dart';
 
 class UserModel {
   final String name;
