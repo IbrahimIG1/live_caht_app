@@ -8,23 +8,24 @@ class FirebaseService {
   static final _auth = FirebaseAuth.instance;
   static final _stor = FirebaseFirestore.instance;
   static UserModel? _currentUser;
-  // to create one UserModel on all project (Singelton)
-  UserModel get currentUser {
+  static UserModel get currentUser {
     if (_currentUser == null) {
-      throw Exception("currentUser is null");
-    } else {
-      return _currentUser!;
+      throw Exception(
+          '_currentUserModel must not be null when calling this getter');
     }
+    return _currentUser!;
   }
-
+  
   // initial firebase
   static Future<void> setupFirebase() async {
     await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform);
   }
 
-  static Stream<QuerySnapshot> get buildViews =>
-      _stor.collection('users').snapshots();
+  static Stream<QuerySnapshot> get buildViews {
+     return  _stor.collection('users').snapshots();
+
+  }
 
   static userSignUp({
     required String name,

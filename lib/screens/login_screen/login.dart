@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:voice_chat_room/Routes/app_router.dart';
 import 'package:voice_chat_room/screens/home_screen/home_screen.dart';
 import 'package:voice_chat_room/screens/login_screen/widgets/text_form_feild.dart';
 import 'package:voice_chat_room/screens/signup_screen/sign_up_screen.dart';
-import 'package:voice_chat_room/services/firebaseservice.dart';
+import 'package:voice_chat_room/services/firebase/firebaseservice.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -92,19 +91,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               password: password.text,
                             );
                             if (result) {
-                               Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen()),
-                            );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeScreen()),
+                              );
                             } else {
-                              if (mounted) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text("Something went wrong!"),
-                                  ),
-                                );
-                              }
+                              const SnackBar(
+                                content: Text("Something went wrong!"),
+                              );
                             }
                           },
                           child: const Text(

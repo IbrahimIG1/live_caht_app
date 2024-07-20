@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:voice_chat_room/Routes/app_router.dart';
 import 'package:voice_chat_room/screens/home_screen/home_screen.dart';
+import 'package:voice_chat_room/screens/login_screen/login.dart';
 import 'package:voice_chat_room/screens/login_screen/widgets/text_form_feild.dart';
-import 'package:voice_chat_room/services/firebaseservice.dart';
+import 'package:voice_chat_room/services/firebase/firebaseservice.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -85,8 +85,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                         TextButton(
                           onPressed: () {
-                            Navigator.of(context)
-                                .pushReplacementNamed(Routes.loginScreen);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()),
+                            );
                           },
                           child: const Text(
                             "have an account?",

@@ -1,10 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:voice_chat_room/screens/login_screen/login.dart';
-import 'package:voice_chat_room/services/firebaseservice.dart';
-import 'package:zego_uikit_prebuilt_live_audio_room/zego_uikit_prebuilt_live_audio_room.dart';
+import 'package:voice_chat_room/services/firebase/firebaseservice.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,30 +28,5 @@ class MyApp extends StatelessWidget {
               ),
               home: LoginScreen());
         });
-  }
-}
-
-class LivePage extends StatelessWidget {
-  final String roomID;
-  final bool isHost;
-
-  const LivePage({Key? key, required this.roomID, this.isHost = false})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: ZegoUIKitPrebuiltLiveAudioRoom(
-        appID: 1090152900, // AppID In Project information in zego console.
-        appSign:
-            'b92ecdb900310704a93445c26448d66e4c2509bc83253d4e0b3cd9006bbc510c', // appSign In Project information in zego console.
-        userID: 'user_id',
-        userName: 'user_name',
-        roomID: roomID,
-        config: isHost
-            ? ZegoUIKitPrebuiltLiveAudioRoomConfig.host()
-            : ZegoUIKitPrebuiltLiveAudioRoomConfig.audience(),
-      ),
-    );
   }
 }
