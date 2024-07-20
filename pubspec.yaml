@@ -44,8 +44,9 @@ dependencies:
   # Adapting screen and font size
   flutter_screenutil: ^5.9.3
   #zigo
-  zego_uikit_prebuilt_call: ^1.4.2
-  zego_uikit_signaling_plugin: ^1.4.0
+  zego_uikit_prebuilt_call:
+  zego_uikit_signaling_plugin:
+  
 
   
 

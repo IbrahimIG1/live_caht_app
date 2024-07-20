@@ -11,13 +11,19 @@ class CallInvetationScreen extends StatelessWidget {
   final String? userName;
   @override
   Widget build(BuildContext context) {
-    
-    return ZegoUIKitPrebuiltCallWithInvitation(
-      child: child,
-        appID:Statics.appID ,
-        appSign: Statics.appSign,
-        userID: userName!,
-        userName: userName!,
-        plugins: [ZegoUIKitSignalingPlugin()]);
+    return onUserLogin(userName!);
   }
+}
+
+ onUserLogin(String  userName) {
+  /// 1.2.1. initialized ZegoUIKitPrebuiltCallInvitationService
+  /// when app's user is logged in or re-logged in
+  /// We recommend calling this method as soon as the user logs in to your app.
+  ZegoUIKitPrebuiltCallInvitationService().init(
+    appID: Statics.appID /*input your AppID*/,
+    appSign: Statics.appSign /*input your AppSign*/,
+    userID: userName,
+    userName: userName,
+    plugins: [ZegoUIKitSignalingPlugin()],
+  );
 }
