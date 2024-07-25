@@ -1,24 +1,25 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:voice_chat_room/common/widgets/top_bar.dart';
+import 'package:voice_chat_room/common/widgets/user_card.dart';
 import 'package:voice_chat_room/models/user_model.dart';
 import 'package:voice_chat_room/services/firebase/firebaseservice.dart';
-import 'package:voice_chat_room/shared/widgets/user_card.dart';
+// import 'package:zego_cloud/common/widgets/call_invitation.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(FirebaseService.currentUser.userName),
-      ),
-      drawer: const Drawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            TopBar(
+              upperTitle: 'Welcome back,',
+              title: FirebaseService.currentUser.name,
+            ),
             Center(
-              // stream to get any user login new
               child: StreamBuilder<QuerySnapshot>(
                 stream: FirebaseService.buildViews,
                 builder: (context, snapshot) {

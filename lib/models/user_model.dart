@@ -1,29 +1,23 @@
-
 class UserModel {
-  final String name;
-  final String userName;
-  final String password;
   final String email;
+  final String userName;
+  final String name;
 
-  UserModel( {required this.email,required this.name, required this.userName, required this.password});
-  
+  const UserModel({
+    required this.email,
+    required this.name,
+    required this.userName,
+  });
 
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'name': name,
-      'password': password,
-      'username': userName,
-      'email': email,
-    };
-  }
+  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+        email: json['email'],
+        name: json['name'],
+        userName: json['username'],
+      );
 
-  factory UserModel.fromJson(Map<String, dynamic> json) {
-    return UserModel(
-      name: json['name'],
-      email: json['email'],
-      userName: json['username'],
-      password: json['password'],
-    );
-  }
-
+  Map<String, dynamic> toJson() => {
+        'email': email,
+        'name': name,
+        'username': userName,
+      };
 }

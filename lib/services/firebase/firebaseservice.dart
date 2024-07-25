@@ -15,7 +15,7 @@ class FirebaseService {
     }
     return _currentUser!;
   }
-  
+
   // initial firebase
   static Future<void> setupFirebase() async {
     await Firebase.initializeApp(
@@ -23,8 +23,7 @@ class FirebaseService {
   }
 
   static Stream<QuerySnapshot> get buildViews {
-     return  _stor.collection('users').snapshots();
-
+    return _stor.collection('users').snapshots();
   }
 
   static userSignUp({
@@ -37,7 +36,7 @@ class FirebaseService {
       final creatUser = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       final UserModel user =
-          UserModel(name: name, userName: userName, password: password,email: email);
+          UserModel(name: name, userName: userName, email: email);
       // check the user data not null
       if (creatUser.user != null) {
         final docRef = _stor.collection('users').doc(creatUser.user!.uid);
